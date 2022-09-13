@@ -1,0 +1,31 @@
+         <table>
+            <tr>
+              <th>marca</th>
+              <th>modelos</th>
+              <th>disponibilidad</th>
+           </tr>
+           <tr *ngFor=" let item of lista">
+              <td>{{item.marca}}</td>
+
+
+              <td *ngFor="let model of item.modelos">
+                {{model.linea}} . {{model.version}}
+              </td>
+             <td *ngFor="let disponibiidad of item.Disponibilidad ">
+               {{disponibiidad.ciudad}}
+
+             </td>
+             <td><button class="btn btn-danger" (click)="borrar(item)"> Borrar</button></td>
+           </tr>
+           <tr>
+             <td><input type="text" #marca placeholder="Marca">
+             <td><input type="text" #linea placeholder="linea">
+             <td><input type="text" #version placeholder="version">
+             <td><input type="text" #ciudad placeholder="ciudad">
+
+               <button class="btn btn-warning" (click)="adiccionar(marca.value,linea.value,version.value,ciudad.value)"> Agregar</button>
+             </td>
+           </tr>
+
+          </table>
+
