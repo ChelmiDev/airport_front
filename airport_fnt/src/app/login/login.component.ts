@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiService} from "../providers/api.service";
 import {FormBuilder, Validators} from "@angular/forms";
-import {formControl} from "@angular/core/schematics/migrations/typed-forms/util";
+
 import {Router} from "@angular/router";
 
 @Component({
@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
       .subscribe(
         data=>{
           if(data!= undefined){
+            this.api.crear_header_token(data.token)
             this.router.navigate(['/inicio'])
           }else {
             this.router.navigate(['/login'])

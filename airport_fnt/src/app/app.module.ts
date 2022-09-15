@@ -11,6 +11,7 @@ import {ApiService} from "./providers/api.service";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
+import {TableModule} from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {ButtonModule} from 'primeng/button';
     HttpClientModule,
     BrowserAnimationsModule,
     InputTextModule,
-    ButtonModule
+    ButtonModule,
+    TableModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]
