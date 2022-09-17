@@ -26,11 +26,23 @@ export class ApiService {
     return this.http.get(url,this.options_token).pipe(catchError(this.handleError<any>()))
 
   }
+  add(endpoint:string, data:any) {
+    let url = `${this.base_url+'/'+ endpoint +'/'}`;
+    let dJson = JSON.stringify(data);
+    return this.http.post(url,dJson, this.options_token).pipe(catchError(this.handleError<any>()))
+  }
 
   crear_header_token(token:string){
-    this.header_token = new HttpHeaders().set('Content-Type','application/json').set('Autorization','Token '+token)
+    this.header_token = new HttpHeaders().set('Content-Type','application/json').set('Authorization','Token '+token)
     this.options_token = {headers:this.header_token};
   }
+
+  update(endpoint: string, id: string | null | undefined, data: any) {
+    let dJson = JSON.stringify(data);
+    let url = `${this.base_url+'/'+ endpoint +'/'+id+'/'}`;
+    return this.http.patch(url,dJson, this.options_token).pipe(catchError(this.handleError<any>()))
+  }
+
 
   private handleError<T> (result?: T) {
     return (error: any): Observable<T> => {

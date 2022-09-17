@@ -12,6 +12,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
 import {TableModule} from 'primeng/table';
+import {DialogModule} from "primeng/dialog";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {TableModule} from 'primeng/table';
     BrowserAnimationsModule,
     InputTextModule,
     ButtonModule,
-    TableModule
+    TableModule,
+    DialogModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]
