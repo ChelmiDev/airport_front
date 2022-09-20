@@ -13,12 +13,17 @@ import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
 import {TableModule} from 'primeng/table';
 import {DialogModule} from "primeng/dialog";
+import {TabMenuModule} from 'primeng/tabmenu';
+import { PilotoComponent } from './piloto/piloto.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    InicioComponent
+    InicioComponent,
+    PilotoComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
@@ -30,9 +35,11 @@ import {DialogModule} from "primeng/dialog";
     InputTextModule,
     ButtonModule,
     TableModule,
-    DialogModule
+    DialogModule,
+    TabMenuModule
+
   ],
-  providers: [ApiService],
+  providers: [ApiService,ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

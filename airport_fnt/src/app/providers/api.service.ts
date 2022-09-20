@@ -37,7 +37,7 @@ export class ApiService {
     this.options_token = {headers:this.header_token};
   }
 
-  update(endpoint: string, id: string | null | undefined, data: any) {
+  update(endpoint: string, id: any, data: any) {
     let dJson = JSON.stringify(data);
     let url = `${this.base_url+'/'+ endpoint +'/'+id+'/'}`;
     return this.http.patch(url,dJson, this.options_token).pipe(catchError(this.handleError<any>()))

@@ -1,8 +1,8 @@
 <div style="padding:30px">
-  <p-table [value]="aviones">
+  <p-table [value]="airport.aviones">
     <ng-template pTemplate="caption">
       <div class="flex aling-items-center justify-content-between">
-        <p-button  (click)="form_avion.reset();ver_formulario_avion=true" label="Adiccionar"></p-button>
+        <p-button  (click)="airport.form_avion.reset();airport.ver_formulario_avion=true" label="Adiccionar"></p-button>
       </div>
     </ng-template>
     <ng-template>
@@ -20,14 +20,14 @@
         <td>{{avion.tipo_avion}}</td>
         <td>{{avion.ciudad_base}}</td>
         <td>{{avion.marca}}</td>
-        <td><p-button  (click)="llenar_form_avion(avion);ver_formulario_avion=true" label="Editar"></p-button></td>
+        <td><p-button  (click)="airport.llenar_form_avion(avion);airport.ver_formulario_avion=true" label="Editar"></p-button></td>
       </tr>
     </ng-template>
   </p-table>
 
 </div>
-<p-dialog header="Formulario de avion" [(visible)]="ver_formulario_avion">
-  <form [formGroup]="form_avion">
+<p-dialog header="Formulario de avion" [(visible)]="airport.ver_formulario_avion">
+  <form [formGroup]="airport.form_avion">
     <div class="grid p-fluid">
       <div class="col-12 md:col-4">
         <input type="text" formControlName="codigo_avion" pInputText placeholder="Codigo avion">
@@ -47,5 +47,5 @@
 
     </div>
   </form>
-  <p-button  (click)="guardar_actualizar_avion()" label="Guardar"></p-button>
+  <p-button  (click)="airport.guardar_actualizar_avion()" label="Guardar"></p-button>
 </p-dialog>
