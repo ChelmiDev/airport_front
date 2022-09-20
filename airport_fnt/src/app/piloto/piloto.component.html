@@ -1,0 +1,27 @@
+<div style="padding:30px">
+  <p-table [value]="pilotos">
+    <ng-template pTemplate="caption">
+      <div class="flex aling-items-center justify-content-between">
+        <p-button  (click)="form_piloto.reset();ver_formulario_piloto=true" label="Adiccionar"></p-button>
+      </div>
+    </ng-template>
+    <ng-template>
+      <tr>
+        <th>Codigo</th>
+        <th>nombre Piloto</th>
+        <th>Hora Vuelo</th>
+        <th>Accion</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-piloto>
+      <tr>
+        <td>{{piloto.codigo_piloto}}</td>
+        <td>{{piloto.nombre_piloto}}</td>
+        <td>{{piloto.horas_vuelo_piloto}}</td>
+        <td><p-button  (click)="llenar_form_piloto(piloto);ver_formulario_piloto=true" label="Editar"></p-button></td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+</div>
+
